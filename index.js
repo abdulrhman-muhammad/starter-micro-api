@@ -15,8 +15,8 @@ app.post('/validateSession', async (req, res) => {
      // use set the certificates for the POST request
     httpsAgent = new https.Agent({
         rejectUnauthorized: false,
-        cert: fs.readFileSync(path.join(__dirname, './certificate_sandbox.pem')),
-       // key: fs.readFileSync(path.join(__dirname, './sandbox.key')),
+        cert: fs.readFileSync(path.join(__dirname, './certificate_colorswindow.pem')),
+        key: fs.readFileSync(path.join(__dirname, './certificate_colorswindow.key')),
     });
     
       response = await axios.post(
