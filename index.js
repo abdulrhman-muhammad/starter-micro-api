@@ -1,14 +1,18 @@
-const http = require('http');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const port = process.env.PORT || 8080;
 
-const hostname = '127.0.0.1';
-const port = 3000;
+// Configure express to use body parser and cors, and add our API endpoints
+const app = express();
+app.use(cors({ origin: '*' }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+app.get('/hello', (req, res) => {
+    res.send('Hi!');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(port, () => {
+    console.log('💪 Server running on ➡️ ', `http://localhost:${port}`);
 });
