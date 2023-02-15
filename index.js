@@ -11,10 +11,42 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/validateSession', async (req, res) => {
     const { appleUrl } = req.body;
-    console.log(appleUrl);
+    
+     // use set the certificates for the POST request
+    httpsAgent = new https.Agent({
+        rejectUnauthorized: false,
+        cert: fs.readFileSync(path.join(__dirname, './certificate.pem')),
+        key: fs.readFileSync(path.join(__dirname, './sandbox.key')),
+    });
+    
+      response = await axios.post(
+        appleUrl,
+        {
+            merchantIdentifier: 'merchant.colorswindow.com',
+            domainName: 'demo.colorswindow.com',
+            displayName: 'Colors Window',
+        },
+        {
+            httpsAgent,
+        }
+    );
     
     res.send('ok');
 });
+
+
+app.post('/pay', async (req, res) => {
+    const { data } = req.body;
+
+    console.log(data);
+
+    // send payment request based o your payment provider requirements
+
+    res.send({
+        approved: true,
+    });
+});
+
 app.listen(port, () => {
     console.log('💪 Server running on ➡️ ', `http://localhost:${port}`);
 });
