@@ -23,7 +23,7 @@ app.post('/validateSession', async (req, res) => {
         appleUrl,
         {
             merchantIdentifier: 'merchant.colorswindow.com',
-            domainName: 'demo.colorswindow.com',
+            domainName: 'colorswindow.com',
             displayName: 'Colors Window',
         },
         {
