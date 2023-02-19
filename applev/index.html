@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="applev/style.css">
     <!-- At a certain point we need to do 2 HTTP calls so I added axios here -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -12,9 +12,9 @@
 <div id="ckoApplePay" class="apple-pay-button apple-pay-button-text-buy" lang=en></div>
 
 <!-- Adding an error message to show in case Apple Pay is not possible -->
-<p  id="ckoApplePayError">ApplePay is not available in this environment.</p>
+<p style="display:none"  id="ckoApplePayError">ApplePay is not available in this environment.</p>
 
-<script src="app.js"></script>
+<script src="applev/app.js"></script>
 </body>
 
 </html>
