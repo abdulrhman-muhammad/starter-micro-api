@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/applev', function(req, res){
-    res.sendFile(__dirname + 'applev/index.html');
+    res.sendFile(__dirname + '/applev/index.html');
 });
 
 
