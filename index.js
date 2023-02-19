@@ -9,6 +9,12 @@ app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+app.get('/applev', function(req, res){
+    res.sendFile(__dirname + 'applev/index.html');
+});
+
+
 app.post('/validateSession', async (req, res) => {
     const { appleUrl } = req.body;
     
