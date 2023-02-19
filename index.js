@@ -14,6 +14,14 @@ app.get('/applev', function(req, res){
     res.sendFile(__dirname + '/applev/index.html');
 });
 
+app.get('/applev/style.css', function(req, res){
+    res.sendFile(__dirname + '/applev/style.css');
+});
+
+app.get('/applev/app.js', function(req, res){
+    res.sendFile(__dirname + '/applev/app.js');
+});
+
 
 app.post('/validateSession', async (req, res) => {
     const { appleUrl } = req.body;
