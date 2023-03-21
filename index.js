@@ -52,6 +52,7 @@ app.post('/validateSession', async (req, res) => {
      
      var httpss = require('https');
      var fs = require('fs');
+     var path = require('path');
      // use set the certificates for the POST request
     httpsAgent =  httpss.Agent({
         rejectUnauthorized: false,
