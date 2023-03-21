@@ -42,6 +42,10 @@ app.get('/applev/app.js', function(req, res){
 
 
 app.post('/validateSession', async (req, res) => {
+  
+  
+  
+   try {
    console.log('1');
     const { appleUrl } = req.body;
     console.log('2');
@@ -52,6 +56,7 @@ app.post('/validateSession', async (req, res) => {
         key: fs.readFileSync(path.join(__dirname, './certificate_colorswindow.key')),
     });
     console.log('3');
+     
       response = await axios.post(
         appleUrl,
         {
@@ -65,6 +70,16 @@ app.post('/validateSession', async (req, res) => {
     );
     
     res.send('ok');
+     
+  } catch (err) {
+    console.error(err)
+    res.status(500).json(err)
+  }
+  
+  
+  
+  
+     
 });
 
 
