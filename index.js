@@ -5,7 +5,23 @@ const port = process.env.PORT || 8080;
 
 // Configure express to use body parser and cors, and add our API endpoints
 const app = express();
-app.use(cors({ origin: '*' }));
+
+const corsOpts = {
+  origin: '*',
+
+  methods: [
+    'GET',
+    'POST',
+  ],
+
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
+
+app.use(cors(corsOpts));
+
+// app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
