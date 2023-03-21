@@ -41,6 +41,11 @@ app.get('/applev/app.js', function(req, res){
 });
 
 
+app.get('/.well-known/apple-developer-merchantid-domain-association.txt', function(req, res){
+    res.sendFile(__dirname + '/.well-known/apple-developer-merchantid-domain-association.txt');
+});
+
+
 app.post('/validateSession', async (req, res) => {
   
   
