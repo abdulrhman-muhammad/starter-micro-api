@@ -49,6 +49,8 @@ app.post('/validateSession', async (req, res) => {
    console.log('1');
     const { appleUrl } = req.body;
     console.log('2');
+     
+     var httpsAgent = require('https');
      // use set the certificates for the POST request
     httpsAgent = new https.Agent({
         rejectUnauthorized: false,
