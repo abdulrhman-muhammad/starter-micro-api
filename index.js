@@ -12,10 +12,12 @@ const corsOpts = {
   methods: [
     'GET',
     'POST',
+    'PUT',
+    'DELETE',
   ],
 
   allowedHeaders: [
-    'Content-Type',
+    'Content-Type, Access-Control-Allow-Headers, X-Requested-With',
   ],
 };
 
