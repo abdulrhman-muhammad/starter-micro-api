@@ -42,15 +42,16 @@ app.get('/applev/app.js', function(req, res){
 
 
 app.post('/validateSession', async (req, res) => {
+   console.log('1');
     const { appleUrl } = req.body;
-    
+    console.log('2');
      // use set the certificates for the POST request
     httpsAgent = new https.Agent({
         rejectUnauthorized: false,
         cert: fs.readFileSync(path.join(__dirname, './certificate_colorswindow.pem')),
         key: fs.readFileSync(path.join(__dirname, './certificate_colorswindow.key')),
     });
-    
+    console.log('3');
       response = await axios.post(
         appleUrl,
         {
