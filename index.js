@@ -17,7 +17,10 @@ const corsOpts = {
   ],
 
   allowedHeaders: [
-    'Content-Type, Access-Control-Allow-Headers, X-Requested-With',
+    'Content-Type',
+    'Access-Control-Allow-Headers',
+    'Authorization',
+    'X-Requested-With',
   ],
 };
 
