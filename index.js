@@ -70,7 +70,7 @@ app.post('/validateSession', async (req, res) => {
         appleUrl,
         {
             merchantIdentifier: 'merchant.colorswindow.com',
-            domainName: 'colorswindow.com',
+            domainName: 'friendly-seal-ring.cyclic.app',
             displayName: 'Colors Window',
         },
         {
