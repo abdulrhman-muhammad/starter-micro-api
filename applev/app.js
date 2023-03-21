@@ -28,7 +28,7 @@ var applePayController = (function (uiController) {
             acceptedCardSchemes: ['amex', 'masterCard', 'maestro', 'visa', 'mada']
         },
         shop: {
-            product_price: 10.0,
+            product_price: 1.0,
             shop_name: 'Demo Shop',
             shop_localisation: {
                 currencyCode: 'GBP',
@@ -45,7 +45,7 @@ var applePayController = (function (uiController) {
                 },
                 {
                     label: 'Express Shipping',
-                    amount: '5.00',
+                    amount: '1.00',
                     detail: 'Arrives in 1-2 days',
                     identifier: 'expressShipping'
                 }
@@ -53,7 +53,7 @@ var applePayController = (function (uiController) {
             WORLDWIDE_region: [
                 {
                     label: 'Worldwide Standard Shipping',
-                    amount: '10.00',
+                    amount: '1.00',
                     detail: 'Arrives in 5-8 days',
                     identifier: 'worldwideShipping'
                 }
