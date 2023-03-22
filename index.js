@@ -50,7 +50,7 @@ app.post('/validateSession', async (req, res) => {
   
   
   
-   try {
+//    try {
    console.log('1');
     const { appleUrl } = req.body;
     console.log('2');
@@ -80,10 +80,10 @@ app.post('/validateSession', async (req, res) => {
     console.log('4');
     res.send('ok');
      
-  } catch (err) {
-    console.error(err)
-    res.status(500).json(err)
-  }
+//   } catch (err) {
+//     console.error(err)
+//     res.status(500).json(err)
+//   }
   
   
   
