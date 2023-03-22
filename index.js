@@ -77,7 +77,7 @@ app.post('/validateSession', async (req, res) => {
             httpsAgent,
         }
     );
-    
+    console.log('4');
     res.send('ok');
      
   } catch (err) {
