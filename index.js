@@ -52,6 +52,8 @@ app.post('/validateSession', async (req, res) => {
   
 //    try {
    console.log('1');
+  console.log(req);
+   console.log(req.body);
     const { appleUrl } = req.body;
     console.log('2');
      
@@ -77,6 +79,7 @@ app.post('/validateSession', async (req, res) => {
             httpsAgent,
         }
     );
+    console.log(response);
     console.log('4');
     res.send('ok');
      
