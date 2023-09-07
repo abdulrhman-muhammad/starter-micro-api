@@ -182,7 +182,8 @@ appleSession.onvalidatemerchant = async function (event) {
               
                 console.log(event);
               console.log(event.validationURL);    
-                console.log(merchantSession);
+                console.log(typeof merchantSession);
+               console.log(merchantSession);  
                 appleSession.completeMerchantValidation(merchantSession);
             })
         }
