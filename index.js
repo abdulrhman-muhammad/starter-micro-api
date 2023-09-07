@@ -46,7 +46,7 @@ app.get('/.well-known/apple-developer-merchantid-domain-association.txt', functi
 });
 
 
-app.get('/validateSession', async (req, res) => {
+app.post('/validateSession', async (req, res) => {
   
   
   
