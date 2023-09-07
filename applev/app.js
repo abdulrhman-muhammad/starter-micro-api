@@ -174,14 +174,14 @@ var applePayController = (function (uiController) {
 // };
         
         appleSession.onvalidatemerchant = function (event) {
-                console.log('sdsddsds');
-              console.log(event);
+                //console.log('sdsddsds');
+              //console.log(event);
         
           
             _validateApplePaySession(event.validationURL, function (merchantSession) {
               
                 
-              console.log(event.validationURL);    
+              //console.log(event.validationURL);    
                 console.log(typeof merchantSession);
                console.log(merchantSession);  
                 appleSession.completeMerchantValidation(merchantSession);
