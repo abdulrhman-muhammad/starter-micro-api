@@ -97,6 +97,7 @@ app.post('/validateSession', async (req, res) => {
 
 
 app.post('/pay', async (req, res) => {
+  console.log(req);
     const { data } = req.body;
  console.log('44444');
     console.log(data);
