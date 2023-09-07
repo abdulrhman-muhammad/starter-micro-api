@@ -163,6 +163,7 @@ var applePayController = (function (uiController) {
         // Apple Pay Session from your Back-End
 
 appleSession.onvalidatemerchant = async function (event) {
+     console.log(event);
   try {
     const { data } = await getApplePayPaymentSession();
        console.log(data);
