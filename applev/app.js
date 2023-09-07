@@ -161,10 +161,21 @@ var applePayController = (function (uiController) {
     var _handleApplePayEvents = function (appleSession) {
         // This is the first event that Apple triggers. Here you need to validate the
         // Apple Pay Session from your Back-End
+
+applePaySession.onvalidatemerchant = async function (event) {
+  try {
+    const { data } = await getApplePayPaymentSession();
+       console.log(data);
+    applePaySession.completeMerchantValidation(data);
+  } catch (e) {
+    console.log(e);
+  }
+};
+        
         appleSession.onvalidatemerchant = function (event) {
             _validateApplePaySession(event.validationURL, function (merchantSession) {
                 console.log(event);
-                console.log(event.validationUR);
+                console.log(event['validationUR']);
                 console.log(merchantSession);
                 appleSession.completeMerchantValidation(merchantSession);
             })
