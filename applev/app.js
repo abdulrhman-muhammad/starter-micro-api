@@ -180,7 +180,7 @@ appleSession.onvalidatemerchant = async function (event) {
             _validateApplePaySession(event.validationURL, function (merchantSession) {
               
                 console.log(event);
-                console.log(event['validationUR']);
+              console.log(event.validationURL);    
                 console.log(merchantSession);
                 appleSession.completeMerchantValidation(merchantSession);
             })
