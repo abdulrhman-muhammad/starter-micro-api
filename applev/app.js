@@ -31,8 +31,8 @@ var applePayController = (function (uiController) {
             product_price: 1.0,
             shop_name: 'Demo Shop',
             shop_localisation: {
-                currencyCode: 'GBP',
-                countryCode: 'GB'
+                currencyCode: 'SAR',
+                countryCode: 'SA'
             }
         },
         shipping: {
