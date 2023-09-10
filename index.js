@@ -115,7 +115,7 @@ app.post('/pay', async (req, res) => {
 
 //  const sdk = require('api')('@tappayments/v1.0#1efyxaliltr1oa');
 
-// sdk.auth('Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd');
+// sdk.auth('Bearer  ');
 // sdk.createApplepayTapToken({
 //   type: 'applepay',
 //   token_data: {
@@ -136,7 +136,7 @@ var pOptions = { method: 'POST',
    { 
      accept: 'application/json',
      'content-type': 'application/json',
-     authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd' },
+     authorization: 'Bearer  ' },
   body: 
    { type: 'applepay',
      token_data: 
@@ -157,7 +157,7 @@ var pOptions = { method: 'POST',
 //   headers: {
 //     accept: 'application/json',
 //     'content-type': 'application/json',
-//     Authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd'
+//     Authorization: 'Bearer  '
 //   },
 //   body: {
 //     type: 'applepay',
@@ -177,7 +177,7 @@ var pOptions = { method: 'POST',
   //  { 
   //    accept: 'application/json',
   //    'content-type': 'application/json',
-  //    authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd' },
+  //    authorization: 'Bearer  ' },
   // body: 
   //  JSON.stringify({ type: 'applepay',
   //    token_data: 
@@ -199,7 +199,7 @@ var pOptions = { method: 'POST',
 //   url: 'https://api.tap.company/v2/tokens',
 //   headers: 
 //    { 'content-type': 'application/json',
-//      authorization: 'Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ' },
+//      authorization: 'Bearer  ' },
 //   body: 
 //    { type: 'applepay',
 //      token_data: 
@@ -248,7 +248,7 @@ var pOptions = { method: 'POST',
 //   }, {
 //     headers: {
 //       'Content-Type':'application/json',
-//        'authorization' : 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd'
+//        'authorization' : 'Bearer  '
 //     }
 // });
 //   console.log({data});
@@ -263,7 +263,7 @@ var pOptions = { method: 'POST',
 //   "port": null,
 //   "path": "/v2/tokens",
 //   "headers": {
-//     "authorization": "Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd",
+//     "authorization": "Bearer  ",
 //     "content-type": "application/json"
 //   }
 // };
