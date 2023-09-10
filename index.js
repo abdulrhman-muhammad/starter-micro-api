@@ -142,20 +142,22 @@ app.post('/pay', async (req, res) => {
 
  const {data} = await axios.post('https://api.tap.company/v2/tokens', {
    type: 'applepay',
-    token_data: { data: req.body.token.paymentData.data,
+    token_data: {
+      data: req.body.token.paymentData.data,
         header: 
          { ephemeralPublicKey: req.body.token.paymentData.header.ephemeralPublicKey,
            publicKeyHash: req.body.token.paymentData.header.publicKeyHash,
            transactionId: req.body.token.paymentData.header.transactionId },
         signature: req.body.token.paymentData.signature,
-         version: req.body.token.paymentData.version },
+         version: req.body.token.paymentData.version 
+    },
      client_ip: '192.168.1.20'
   }, {
     headers: {
       'Content-Type':'application/json',
-       authorization : 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd'
+       'authorization' : 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd'
     }
-})
+});
   console.log({data});
 
 
