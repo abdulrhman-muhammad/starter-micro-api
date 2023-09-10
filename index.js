@@ -157,7 +157,7 @@ var request = require("request");
    { 
      accept: 'application/json',
      'content-type': 'application/json',
-     authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXU' },
+     authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd' },
   body: 
    JSON.stringify({ type: 'applepay',
      token_data: 
