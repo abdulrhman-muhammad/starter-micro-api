@@ -98,6 +98,16 @@ app.post('/validateSession', async (req, res) => {
 
 app.post('/pay', async (req, res) => {
 console.log(req.body);
+  console.log(req.body.token.paymentData.data);
+  console.log(req.body.token.paymentData.signature);
+  console.log(req.body.token.paymentData.header);
+    console.log(req.body.token.paymentData.version);
+  console.log(req.body.token.paymentMethod.displayName);
+   console.log(req.body.token.paymentMethod.network);
+   console.log(req.body.token.paymentMethod.type);
+   console.log(req.body.token.transactionIdentifier);
+  
+  console.log(req.body.customerEmail);
   var httpPay = require("https");
 
   var payOptions = {
