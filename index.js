@@ -124,10 +124,12 @@ app.post('/pay', async (req, res) => {
 
 
   var payReq = httpPay.request(payOptions, function (ress) {
+      console.log('sdsdfsdfsdfdsfsd3235435345534534534');
      console.log(ress);
   var chunks = [];
 
   ress.on("data", function (chunk) {
+      console.log('sdsd 5435345534534534');
       console.log(chunk);
     chunks.push(chunk);
     console.log(chunks);
@@ -135,6 +137,7 @@ app.post('/pay', async (req, res) => {
 
 
      ress.on("end", function () {
+         console.log('sdsd 5435345dddzzzzzzcvdedecxvdesxcdesxcvdssedxcdesxcvdsescvds534534534');
     var body = Buffer.concat(chunks);
     console.log('body'+body.toString());
      });
