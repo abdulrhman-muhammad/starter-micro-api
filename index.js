@@ -97,7 +97,7 @@ app.post('/validateSession', async (req, res) => {
 
 
 app.post('/pay', async (req, res) => {
-console.log('req'+req);
+console.log(req);
   var httpPay = require("https");
 
   var payOptions = {
@@ -106,7 +106,7 @@ console.log('req'+req);
   "port": null,
   "path": "/v2/tokens",
   "headers": {
-    "authorization": "Bearer pk_test_cgEJzPZtL6DXGNm157Q4O8uB",
+    "authorization": "Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd",
     "content-type": "application/json"
   }
 };
@@ -116,7 +116,7 @@ console.log('req'+req);
   var chunks = [];
 
   ress.on("data", function (chunk) {
-      console.log('chunk'+chunk);
+      console.log(chunk);
     chunks.push(chunk);
   });
 
