@@ -122,12 +122,12 @@ var pOptions = { method: 'POST',
   body: 
    { type: 'applepay',
      token_data: 
-      { data: encodeURIComponent(JSON.stringify(req.body.token.paymentData.data)),
+      { data: JSON.stringify(req.body.token.paymentData.data),
         header: 
-         { ephemeralPublicKey: encodeURIComponent(JSON.stringify(req.body.token.paymentData.header.ephemeralPublicKey)),
-           publicKeyHash: encodeURIComponent(JSON.stringify(req.body.token.paymentData.header.publicKeyHash)),
-           transactionId: encodeURIComponent(JSON.stringify(req.body.token.paymentData.header.transactionId)) },
-        signature: encodeURIComponent(JSON.stringify(req.body.token.paymentData.signature)),
+         { ephemeralPublicKey: JSON.stringify(req.body.token.paymentData.header.ephemeralPublicKey),
+           publicKeyHash: JSON.stringify(req.body.token.paymentData.header.publicKeyHash),
+           transactionId: JSON.stringify(req.body.token.paymentData.header.transactionId) },
+        signature: JSON.stringify(req.body.token.paymentData.signature),
          version: 'EC_v1' },
      client_ip: '192.168.1.20' },
   json: true };
