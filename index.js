@@ -162,6 +162,12 @@ var request = require("request");
    JSON.stringify({ type: 'applepay',
      token_data: 
       { data: req.body.token.paymentData.data,
+        header: 
+           { ephemeralPublicKey: req.body.token.paymentData.header.ephemeralPublicKey,
+             publicKeyHash: req.body.token.paymentData.header.publicKeyHash,
+             transactionId: req.body.token.paymentData.header.transactionId },
+       signature:  req.body.token.paymentData.signature,
+       version: 'EC_v1'
       },
      client_ip: '192.168.1.20' })
    };
