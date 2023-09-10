@@ -130,44 +130,44 @@ app.post('/pay', async (req, res) => {
 
 var request = require("request");
 
-// var pOptions = { method: 'POST',
-//   url: 'https://api.tap.company/v2/tokens',
-//   headers: 
-//    { 
-//      accept: 'application/json',
-//      'content-type': 'application/json',
-//      authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd' },
-//   body: 
-//    { type: 'applepay',
-//      token_data: 
-//       { data: JSON.stringify(req.body.token.paymentData.data),
-//         header: 
-//          { ephemeralPublicKey: JSON.stringify(req.body.token.paymentData.header.ephemeralPublicKey),
-//            publicKeyHash: JSON.stringify(req.body.token.paymentData.header.publicKeyHash),
-//            transactionId: JSON.stringify(req.body.token.paymentData.header.transactionId) },
-//         signature: JSON.stringify(req.body.token.paymentData.signature),
-//          version: 'EC_v1' },
-//      client_ip: '192.168.1.20' },
-//   json: true };
-
-
-  const pOptions = {
-  method: 'POST',
+var pOptions = { method: 'POST',
   url: 'https://api.tap.company/v2/tokens',
-  headers: {
-    accept: 'application/json',
-    'content-type': 'application/json',
-    Authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd'
-  },
-  body: {
-    type: 'applepay',
-    token_data: {
-      data: JSON.stringify(req.body.token.paymentData.data)
-    },
-    client_ip: '192.168.1.20'
-  },
-  json: true
-};
+  headers: 
+   { 
+     accept: 'application/json',
+     'content-type': 'application/json',
+     authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd' },
+  body: 
+   { type: 'applepay',
+     token_data: 
+      { data: JSON.stringify(req.body.token.paymentData.data),
+        header: 
+         { ephemeralPublicKey: JSON.stringify(req.body.token.paymentData.header.ephemeralPublicKey),
+           publicKeyHash: JSON.stringify(req.body.token.paymentData.header.publicKeyHash),
+           transactionId: JSON.stringify(req.body.token.paymentData.header.transactionId) },
+        signature: JSON.stringify(req.body.token.paymentData.signature),
+         version: 'EC_v1' },
+     client_ip: '192.168.1.20' },
+  json: true };
+
+
+//   const pOptions = {
+//   method: 'POST',
+//   url: 'https://api.tap.company/v2/tokens',
+//   headers: {
+//     accept: 'application/json',
+//     'content-type': 'application/json',
+//     Authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd'
+//   },
+//   body: {
+//     type: 'applepay',
+//     token_data: {
+//       data: JSON.stringify(req.body.token.paymentData.data)
+//     },
+//     client_ip: '192.168.1.20'
+//   },
+//   json: true
+// };
 
 
 
