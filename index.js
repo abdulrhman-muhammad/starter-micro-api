@@ -140,17 +140,17 @@ var pOptions = { method: 'POST',
 // });
 
 
-   try {
-    response = await request(pOptions, function (error, response, body) {
+   // try {
+  return  response = await request(pOptions, function (error, response, body) {
   console.log('77777787776');
   if (error) throw new Error(error);
  console.log('5656565656565');
   console.log(body);
 });
-  } catch (err) {
-    logger.error('Http error', err);
-    return res.status(500).send();
-  }
+  // } catch (err) {
+  //   logger.error('Http error', err);
+  //   return res.status(500).send();
+  // }
 
 
 //  const {data} = await axios.post('https://api.tap.company/v2/tokens', {
@@ -227,9 +227,9 @@ var pOptions = { method: 'POST',
 
     // send payment request based o your payment provider requirements
 
-    res.send({
-        approved: true,
-    });
+    // res.send({
+    //     approved: true,
+    // });
 });
 
 app.listen(port, () => {
