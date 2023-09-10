@@ -98,7 +98,7 @@ app.post('/validateSession', async (req, res) => {
 
 app.post('/pay', async (req, res) => {
  // console.log(req.body);
-    console.log(req.body.token.paymentData.data);
+    console.log(JSON.stringify(req.body.token.paymentData.data));
 //   console.log(req.body.token.paymentData.signature);
 //   console.log(req.body.token.paymentData.header);
 //    console.log(req.body.token.paymentData.header.ephemeralPublicKey);
