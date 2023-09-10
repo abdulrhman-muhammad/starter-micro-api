@@ -125,7 +125,7 @@ var pOptions = { method: 'POST',
       { data: encodeURIComponent(JSON.stringify(req.body.token.paymentData.data)),
         header: 
          { ephemeralPublicKey: encodeURIComponent(JSON.stringify(req.body.token.paymentData.header.ephemeralPublicKey)),
-           publicKeyHash: rencodeURIComponent(JSON.stringify(req.body.token.paymentData.header.publicKeyHash)),
+           publicKeyHash: encodeURIComponent(JSON.stringify(req.body.token.paymentData.header.publicKeyHash)),
            transactionId: encodeURIComponent(JSON.stringify(req.body.token.paymentData.header.transactionId)) },
         signature: encodeURIComponent(JSON.stringify(req.body.token.paymentData.signature)),
          version: 'EC_v1' },
