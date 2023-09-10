@@ -161,7 +161,7 @@ var request = require("request");
   body: 
    JSON.stringify({ type: 'applepay',
      token_data: 
-      { data: req.body.token.paymentData.data,
+      { data: req.body.token.paymentData,
       },
      client_ip: '192.168.1.20' })
    };
