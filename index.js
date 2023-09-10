@@ -109,51 +109,86 @@ app.post('/pay', async (req, res) => {
 //    console.log(req.body.token.transactionIdentifier);
   
 //   console.log(req.body.customerEmail);
-  var httpPay = require("https");
-
-  var payOptions = {
-  "method": "POST",
-  "hostname": "api.tap.company",
-  "port": null,
-  "path": "/v2/tokens",
-  "headers": {
-    "authorization": "Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd",
-    "content-type": "application/json"
-  }
-};
 
 
-  var payReq = httpPay.request(payOptions, function (ress) {
-      console.log('sdsdfsdfsdfdsfsd3235435345534534534');
-     console.log(ress);
-  var chunks = [];
 
-  ress.on("data", function (chunk) {
-      console.log('sdsd 5435345534534534');
-      console.log(chunk);
-    chunks.push(chunk);
-    console.log(chunks);
-  });
+var request = require("request");
 
+var pOptions = { method: 'POST',
+  url: 'https://api.tap.company/v2/tokens',
+  headers: 
+   { 'content-type': 'application/json',
+     authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd' },
+  body: 
+   { type: 'applepay',
+     token_data: 
+      { data: req.body.token.paymentData.data,
+        header: 
+         { ephemeralPublicKey: req.body.token.paymentData.header.ephemeralPublicKey,
+           publicKeyHash: req.body.token.paymentData.header.publicKeyHash,
+           transactionId: req.body.token.paymentData.header.transactionId },
+        signature: req.body.token.paymentData.signature,
+         version: req.body.token.paymentData.version },
+     client_ip: '192.168.1.20' },
+  json: true };
 
-     ress.on("end", function () {
-         console.log('sdsd 5435345dddzzzzzzcvdedecxvdesxcdesxcvdssedxcdesxcvdsescvds534534534');
-    var body = Buffer.concat(chunks);
-    console.log('body'+body.toString());
-     });
+request(pOptions, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
 });
 
-  payReq.write(JSON.stringify({ type: 'applepay',
-  token_data: 
-   { data: req.body.token.paymentData.data,
-     header: 
-      { ephemeralPublicKey: req.body.token.paymentData.header.ephemeralPublicKey,
-        publicKeyHash: req.body.token.paymentData.header.publicKeyHash,
-        transactionId: req.body.token.paymentData.header.transactionId },
-     signature: req.body.token.paymentData.signature,
-     version: req.body.token.paymentData.version },
-  client_ip: '192.168.1.20' }));
-payReq.end();
+
+ 
+
+
+
+  
+//   var httpPay = require("https");
+
+//   var payOptions = {
+//   "method": "POST",
+//   "hostname": "api.tap.company",
+//   "port": null,
+//   "path": "/v2/tokens",
+//   "headers": {
+//     "authorization": "Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd",
+//     "content-type": "application/json"
+//   }
+// };
+
+
+//   var payReq = httpPay.request(payOptions, function (ress) {
+//       console.log('sdsdfsdfsdfdsfsd3235435345534534534');
+//      console.log(ress);
+//   var chunks = [];
+
+//   ress.on("data", function (chunk) {
+//       console.log('sdsd 5435345534534534');
+//       console.log(chunk);
+//     chunks.push(chunk);
+//     console.log(chunks);
+//   });
+
+
+//      ress.on("end", function () {
+//          console.log('sdsd 5435345dddzzzzzzcvdedecxvdesxcdesxcvdssedxcdesxcvdsescvds534534534');
+//     var body = Buffer.concat(chunks);
+//     console.log('body'+body.toString());
+//      });
+// });
+
+//   payReq.write(JSON.stringify({ type: 'applepay',
+//   token_data: 
+//    { data: req.body.token.paymentData.data,
+//      header: 
+//       { ephemeralPublicKey: req.body.token.paymentData.header.ephemeralPublicKey,
+//         publicKeyHash: req.body.token.paymentData.header.publicKeyHash,
+//         transactionId: req.body.token.paymentData.header.transactionId },
+//      signature: req.body.token.paymentData.signature,
+//      version: req.body.token.paymentData.version },
+//   client_ip: '192.168.1.20' }));
+// payReq.end();
     
   
     const { data } = req.body;
