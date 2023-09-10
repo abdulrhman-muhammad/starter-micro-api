@@ -106,13 +106,13 @@ console.log('req'+req);
   "port": null,
   "path": "/v2/tokens",
   "headers": {
-    "authorization": "Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd",
+    "authorization": "Bearer pk_test_cgEJzPZtL6DXGNm157Q4O8uB",
     "content-type": "application/json"
   }
 };
 
 
-  var payReq = http.request(options, function (ress) {
+  var payReq = httpPay.request(payOptions, function (ress) {
   var chunks = [];
 
   ress.on("data", function (chunk) {
