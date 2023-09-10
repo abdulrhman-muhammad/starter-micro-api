@@ -97,18 +97,18 @@ app.post('/validateSession', async (req, res) => {
 
 
 app.post('/pay', async (req, res) => {
-console.log(req.body);
-  console.log(req.body.token.paymentData.data);
-  console.log(req.body.token.paymentData.signature);
-  console.log(req.body.token.paymentData.header);
-   console.log(req.body.token.paymentData.header.ephemeralPublicKey);
-   console.log(req.body.token.paymentData.header.publicKeyHash);
-   console.log(req.body.token.paymentData.header.transactionId);
-    console.log(req.body.token.paymentData.version);
+// console.log(req.body);
+//   console.log(req.body.token.paymentData.data);
+//   console.log(req.body.token.paymentData.signature);
+//   console.log(req.body.token.paymentData.header);
+//    console.log(req.body.token.paymentData.header.ephemeralPublicKey);
+//    console.log(req.body.token.paymentData.header.publicKeyHash);
+//    console.log(req.body.token.paymentData.header.transactionId);
+//     console.log(req.body.token.paymentData.version);
    
-   console.log(req.body.token.transactionIdentifier);
+//    console.log(req.body.token.transactionIdentifier);
   
-  console.log(req.body.customerEmail);
+//   console.log(req.body.customerEmail);
   var httpPay = require("https");
 
   var payOptions = {
@@ -124,11 +124,13 @@ console.log(req.body);
 
 
   var payReq = httpPay.request(payOptions, function (ress) {
+     console.log(ress);
   var chunks = [];
 
   ress.on("data", function (chunk) {
       console.log(chunk);
     chunks.push(chunk);
+    console.log(chunks);
   });
 
 
@@ -153,7 +155,7 @@ payReq.end();
   
     const { data } = req.body;
  console.log('44444');
-    console.log(payReq);
+    // console.log(payReq);
 
     // send payment request based o your payment provider requirements
 
