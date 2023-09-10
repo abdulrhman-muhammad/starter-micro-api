@@ -151,26 +151,46 @@ var request = require("request");
 //   json: true };
 
 
-  var pOptions = { method: 'POST',
+  const pOptions = {
+  method: 'POST',
   url: 'https://api.tap.company/v2/tokens',
-  headers: 
-   { 
-     accept: 'application/json',
-     'content-type': 'application/json',
-     authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd' },
-  body: 
-   JSON.stringify({ type: 'applepay',
-     token_data: 
-      { data: req.body.token.paymentData.data,
-        header: 
-           { ephemeralPublicKey: req.body.token.paymentData.header.ephemeralPublicKey,
-             publicKeyHash: req.body.token.paymentData.header.publicKeyHash,
-             transactionId: req.body.token.paymentData.header.transactionId },
-       signature:  req.body.token.paymentData.signature,
-       version: 'EC_v1'
-      },
-     client_ip: '192.168.1.20' })
-   };
+  headers: {
+    accept: 'application/json',
+    'content-type': 'application/json',
+    Authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd'
+  },
+  body: {
+    type: 'applepay',
+    token_data: {
+      data: req.body.token.paymentData.data
+    },
+    client_ip: '192.168.1.20'
+  },
+  json: true
+};
+
+
+
+  // var pOptions = { method: 'POST',
+  // url: 'https://api.tap.company/v2/tokens',
+  // headers: 
+  //  { 
+  //    accept: 'application/json',
+  //    'content-type': 'application/json',
+  //    authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd' },
+  // body: 
+  //  JSON.stringify({ type: 'applepay',
+  //    token_data: 
+  //     { data: req.body.token.paymentData.data,
+  //       header: 
+  //          { ephemeralPublicKey: req.body.token.paymentData.header.ephemeralPublicKey,
+  //            publicKeyHash: req.body.token.paymentData.header.publicKeyHash,
+  //            transactionId: req.body.token.paymentData.header.transactionId },
+  //      signature:  req.body.token.paymentData.signature,
+  //      version: 'EC_v1'
+  //     },
+  //    client_ip: '192.168.1.20' })
+  //  };
 
 
 
