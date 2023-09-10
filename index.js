@@ -113,8 +113,9 @@ app.post('/pay', async (req, res) => {
 
 
 
-  const sdk = require('api')('@tappayments/v1.0#1efyxaliltr1oa');
+ const sdk = require('api')('@tappayments/v1.0#1efyxaliltr1oa');
 
+sdk.auth('Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd');
 sdk.createApplepayTapToken({
   type: 'applepay',
   token_data: {
