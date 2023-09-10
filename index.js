@@ -97,7 +97,7 @@ app.post('/validateSession', async (req, res) => {
 
 
 app.post('/pay', async (req, res) => {
-// console.log(req.body);
+  console.log(req.body);
 //   console.log(req.body.token.paymentData.data);
 //   console.log(req.body.token.paymentData.signature);
 //   console.log(req.body.token.paymentData.header);
@@ -122,13 +122,13 @@ var pOptions = { method: 'POST',
   body: 
    { type: 'applepay',
      token_data: 
-      { data: req.body.token.paymentData.data,
+      { data: encodeURIComponent(JSON.stringify(req.body.token.paymentData.data)),
         header: 
-         { ephemeralPublicKey: req.body.token.paymentData.header.ephemeralPublicKey,
-           publicKeyHash: req.body.token.paymentData.header.publicKeyHash,
-           transactionId: req.body.token.paymentData.header.transactionId },
-        signature: req.body.token.paymentData.signature,
-         version: req.body.token.paymentData.version },
+         { ephemeralPublicKey: encodeURIComponent(JSON.stringify(req.body.token.paymentData.header.ephemeralPublicKey)),
+           publicKeyHash: rencodeURIComponent(JSON.stringify(req.body.token.paymentData.header.publicKeyHash)),
+           transactionId: encodeURIComponent(JSON.stringify(req.body.token.paymentData.header.transactionId)) },
+        signature: encodeURIComponent(JSON.stringify(req.body.token.paymentData.signature)),
+         version: 'EC_v1' },
      client_ip: '192.168.1.20' },
   json: true };
 
