@@ -97,7 +97,7 @@ app.post('/validateSession', async (req, res) => {
 
 
 app.post('/pay', async (req, res) => {
-console.log(req);
+console.log(req.body);
   var httpPay = require("https");
 
   var payOptions = {
