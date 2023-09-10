@@ -67,7 +67,7 @@ app.post('/validateSession', async (req, res) => {
         key: fs.readFileSync(path.join(__dirname, './certificate_colorswindow.key')),
     });
     console.log('3');
-     
+      
       response = await axios.post(
         appleUrl,
         {
@@ -97,7 +97,7 @@ app.post('/validateSession', async (req, res) => {
 
 
 app.post('/pay', async (req, res) => {
- // console.log(req.body);
+  console.log(req.body);
     console.log(JSON.stringify(req.body.token.paymentData.data));
 //   console.log(req.body.token.paymentData.signature);
 //   console.log(req.body.token.paymentData.header);
@@ -113,27 +113,29 @@ app.post('/pay', async (req, res) => {
 
 
 
- const sdk = require('api')('@tappayments/v1.0#1efyxaliltr1oa');
+//  const sdk = require('api')('@tappayments/v1.0#1efyxaliltr1oa');
 
-sdk.auth('Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd');
-sdk.createApplepayTapToken({
-  type: 'applepay',
-  token_data: {
-    data: 'CM8i9PNK4yXtKO3xmOn6uyYOWmQ+iX9/Oc0EWHJZnPZ/IAEe2UYNCfely3dgq3veEygmQcl0s8lvMeCIZAbbBvbZWPKng9lfUwP2u3IUOFfFyI4beE9znpQ/e0nyQiVh8NFyZun8o0/YZfdFhaBy8bunveULZkWODZy3vg1LLTk0wSRfzbiFav/krgeMvztl8U85Fefl1VJVoJbW/jtShwDkusHizw/p/hkLiOFcCYSz7h9culZQMTWfqsxIfTuY3mOl+NhjAHPP+UFv4wefXrQL9MKO2cI6ttXOp5k6M6mFV/Qe0fbmJ6GnDWDMSiikW+3eL0yi0IApAKmmVgPS+uk42dyhrnSPhB6A7EJBmhEEb3ErL1I69Jq9REjDHp+VoZR0fAbDtpbjKKMo'
-  },
-  client_ip: '192.168.1.20'
-})
-  .then(({ data }) => console.log(data))
-  .catch(err => console.error(err));
+// sdk.auth('Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd');
+// sdk.createApplepayTapToken({
+//   type: 'applepay',
+//   token_data: {
+//     data: 'CM8i9PNK4yXtKO3xmOn6uyYOWmQ+iX9/Oc0EWHJZnPZ/IAEe2UYNCfely3dgq3veEygmQcl0s8lvMeCIZAbbBvbZWPKng9lfUwP2u3IUOFfFyI4beE9znpQ/e0nyQiVh8NFyZun8o0/YZfdFhaBy8bunveULZkWODZy3vg1LLTk0wSRfzbiFav/krgeMvztl8U85Fefl1VJVoJbW/jtShwDkusHizw/p/hkLiOFcCYSz7h9culZQMTWfqsxIfTuY3mOl+NhjAHPP+UFv4wefXrQL9MKO2cI6ttXOp5k6M6mFV/Qe0fbmJ6GnDWDMSiikW+3eL0yi0IApAKmmVgPS+uk42dyhrnSPhB6A7EJBmhEEb3ErL1I69Jq9REjDHp+VoZR0fAbDtpbjKKMo'
+//   },
+//   client_ip: '192.168.1.20'
+// })
+//   .then(({ data }) => console.log(data))
+//   .catch(err => console.error(err));
   
 
 
-//var request = require("request");
+var request = require("request");
 
 // var pOptions = { method: 'POST',
 //   url: 'https://api.tap.company/v2/tokens',
 //   headers: 
-//    { 'content-type': 'application/json',
+//    { 
+//      accept: 'application/json',
+//      'content-type': 'application/json',
 //      authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd' },
 //   body: 
 //    { type: 'applepay',
@@ -147,6 +149,22 @@ sdk.createApplepayTapToken({
 //          version: 'EC_v1' },
 //      client_ip: '192.168.1.20' },
 //   json: true };
+
+
+  var pOptions = { method: 'POST',
+  url: 'https://api.tap.company/v2/tokens',
+  headers: 
+   { 
+     accept: 'application/json',
+     'content-type': 'application/json',
+     authorization: 'Bearer pk_live_JC2fuQ9SNysMh4ant8ebrXUd' },
+  body: 
+   JSON.stringify({ type: 'applepay',
+     token_data: 
+      { data: req.body.token.paymentData.data,
+      },
+     client_ip: '192.168.1.20' })
+   };
 
 
 
@@ -169,12 +187,12 @@ sdk.createApplepayTapToken({
 //      client_ip: '192.168.1.20' },
 //   json: true };
   
-// request(pOptions, function (error, response, body) {
-//   console.log('77777787776');
-//   if (error) throw new Error(error);
-//  console.log('5656565656565');
-//   console.log(body);
-// });
+ return request(pOptions, function (error, response, body) {
+  console.log('77777787776');
+  if (error) throw new Error(error);
+ console.log('5656565656565');
+  console.log(body);
+});
 
 
    // try {
