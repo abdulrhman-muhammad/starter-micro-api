@@ -136,7 +136,7 @@ var pOptions = { method: 'POST',
    { 
      accept: 'application/json',
      'content-type': 'application/json',
-     authorization: 'Bearer  ' },
+     authorization: 'Bearer 6LeE0mcnAAAAAHjXi4azTBL6RX7pY-CVtVfYkW5g' },
   body: 
    { type: 'applepay',
      token_data: 
